@@ -16,11 +16,24 @@ public class PlayerMovementScript : MonoBehaviour
         actualPos = positions.Length / 2;
     }
 
+    public void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            MoveLeft();
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            MoveRight();
+        }
+    }
+
     public void MoveLeft()
     {
         if (actualPos > 0)
         {
-            actualPos -- ;
+            actualPos--;
             transform.position = positions[actualPos];
         }
     }
